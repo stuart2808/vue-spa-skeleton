@@ -2,10 +2,10 @@
     <span>
         <v-navigation-drawer app v-model="drawer" dark disable-resize-watcher>
             <v-list>
-                <v-list-item href="/">
+                <v-list-item>
                     <v-list-item-content>
                         <v-list-item-title class="title">
-                            {{ title }}
+                            <router-link to="/" class="heading-link"> {{ title }} </router-link>
                         </v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
@@ -23,8 +23,8 @@
         </v-navigation-drawer>
         <v-app-bar app dark>
             <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title class="headline text-uppercase" href="/">
-                <span>{{ title }}</span>
+            <v-toolbar-title class="headline text-uppercase">
+                <router-link to="/" class="heading-link">{{ title }}</router-link>
             </v-toolbar-title>
             <v-spacer></v-spacer>
 
@@ -59,3 +59,12 @@ export default {
   })
 }
 </script>
+
+<style scoped>
+.heading-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+
+</style>
